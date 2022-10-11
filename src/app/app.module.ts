@@ -20,6 +20,9 @@ import { NewEducationComponent } from './components/education//new-education.com
 import { EditEducationComponent } from './components/education/edit-education.component';
 import { EditSkillComponent } from './components/hard-and-soft-skills/edit-skill.component';
 import { NewSkillComponent } from './components/hard-and-soft-skills/new-skill.component';
+import { LogoApComponent } from './components/logo-ap/logo-ap.component';
+import { BannerComponent } from './components/banner/banner.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { NewSkillComponent } from './components/hard-and-soft-skills/new-skill.c
     NewEducationComponent,
     EditEducationComponent,
     EditSkillComponent,
-    NewSkillComponent
+    NewSkillComponent,
+    LogoApComponent,
+    BannerComponent
+   
   ],
   imports: [
     BrowserModule,
