@@ -6,7 +6,7 @@
         </button>
     </div>
 
-    <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let skill of skill">
+    <div class="text-center col-sm-4 col-md-4 col-lg-4 circle" *ngFor="let skill of skill">
         <circle-progress
             [percent]="(skill.percentage)"
             [radius]="100"
