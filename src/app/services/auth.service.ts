@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { JWTokenDTO } from '../model/jwt-dto';
 import { NewUser } from '../model/new-user';
 import { UserLogin } from '../model/user-login';
@@ -10,7 +11,7 @@ import { UserLogin } from '../model/user-login';
 })
 export class AuthService {
 
-  authURL = "https://backendhh.herokuapp.com/auth/";
+  authURL = environment.URL + 'auth/'
 
   constructor(private httpClient: HttpClient) { }
 

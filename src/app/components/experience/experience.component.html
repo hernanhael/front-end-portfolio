@@ -1,28 +1,38 @@
 <div class="row">
-    <h1>Job Experience</h1>
-    <div class="col-lg-2">
-        <button type="button" calss="btn btn-dark" routerLink="newexperience" *ngIf="isLogged">
-            New Experience
-        </button>
-    </div>
-    
-    <div class="col lg 1"></div>
-    <div class="col-lg-11">
-        <table class="talbe">
-            <tbody>
-                <tr *ngFor="let Experience of expe">
-                    <td>{{Experience.experienceName}}</td>
-                    <td>{{Experience.experienceDescription}}</td>
-                    <td *ngIf="isLogged">
-                        <button class="btn btn-dark" routerLink="/editexperience/{{Experience.id}}">
-                        <i class="bi bi-pencil-fill"></i>Edit</button>
-                    </td>                        
-                    <td *ngIf="isLogged">
-                        <button class="btn btn-danger" (click)="delete(Experience.id)">
-                        <i class="bi bi trash-fill"></i>Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <h1>Experience</h1>
+  <div class="col-lg-2">
+    <button
+      type="button"
+      calss="btn btn-dark"
+      routerLink="newexperience"
+      *ngIf="isLogged"
+    >
+      New Experience
+    </button>
+  </div>
+
+  <div class="col lg 1"></div>
+  <div class="col-lg-11">
+    <table class="talbe">
+      <tbody>
+        <tr *ngFor="let Experience of expe">
+          <td>{{ Experience.experienceName }}</td>
+          <td>{{ Experience.experienceDescription }}</td>
+          <td *ngIf="isLogged">
+            <button
+              class="btn btn-dark"
+              routerLink="/editexperience/{{ Experience.id }}"
+            >
+              <i class="bi bi-pencil-fill"> </i>Edit
+            </button>
+          </td>
+          <td *ngIf="isLogged">
+            <button class="btn btn-danger" (click)="delete(Experience.id)">
+              <i class="bi bi trash-fill"> </i>Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
