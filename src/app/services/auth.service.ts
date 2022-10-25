@@ -10,17 +10,16 @@ import { UserLogin } from '../model/user-login';
   providedIn: 'root'
 })
 export class AuthService {
-
-  authURL = environment.URL + 'auth/'
+  URL = environment.URL + 'auth/';
 
   constructor(private httpClient: HttpClient) { }
 
   public nuevo(newUser: NewUser): Observable<any> { 
-    return this.httpClient.post<any>(this.authURL + "new", newUser)
+    return this.httpClient.post<any>(this.URL + 'new', newUser);
   }
 
   public login(userLogin: UserLogin): Observable<JWTokenDTO> { 
-    return this.httpClient.post<JWTokenDTO>(this.authURL + "login", userLogin); 
+    return this.httpClient.post<JWTokenDTO>(this.URL + 'login', userLogin) 
   }
 }
  

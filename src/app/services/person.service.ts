@@ -8,12 +8,11 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class PersonService {
+  URL = environment.URL + 'person/';
 
-  url = environment.URL + 'person/';
-
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   public getPerson(): Observable<Person> { 
-    return this.http.get<Person>(this.url + 'get/profile');
+    return this.httpClient.get<Person>(this.URL + 'get/profile');
   }
 }

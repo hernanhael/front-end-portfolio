@@ -8,24 +8,23 @@ import { Education } from '../model/education';
   providedIn: 'root'
 })
 export class EducationService {
-
   URL = environment.URL + 'education/';
 
   constructor(private httpClient: HttpClient) { } 
 
   public list(): Observable<Education[]> { 
-    return this.httpClient.get<Education[]> (this.URL + 'list');
+    return this.httpClient.get<Education[]>(this.URL + 'list');
   }
 
   public detail(id: number): Observable<Education> { 
     return this.httpClient.get<Education>(this.URL + `detail/${id}`);
   } 
 
-  public save(education: Education) { 
+  public save(education: Education): Observable<any> { 
     return this.httpClient.post<any>(this.URL + 'create', education);
   } 
 
-  public update(id: number, education: Education) { 
+  public update(id: number, education: Education): Observable<any> { 
     return this.httpClient.put<any>(this.URL + `update/${id}`, education);
   }
   
