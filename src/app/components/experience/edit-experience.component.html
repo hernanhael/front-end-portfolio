@@ -1,14 +1,14 @@
-<div class="container" *ngIf="jobExperience">
+<div class="container" *ngIf="experience">
     <div class="row">
         <div>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
                     <label for="experienceName">Job Name</label>
-                    <input type="text" class="form-control" id="experienceName" name="experienceName" [(ngModel)]="jobExperience.experienceName" required>
+                    <input type="text" class="form-control" id="experienceName" name="experienceName" [(ngModel)]="experience.experienceName" required>
                 </div>
                 <div class="form-group">
                     <label for="experienceDescription">Job Description</label>
-                    <input type="text" class="form-control" id="experienceDescription" name="experienceDescription" [(ngModel)]="jobExperience.experienceDescription" required>
+                    <input type="text" class="form-control" id="experienceDescription" name="experienceDescription" [(ngModel)]="experience.experienceDescription" required>
                 </div>
                 <button class="btn btn-primary">
                     Refresh Experience

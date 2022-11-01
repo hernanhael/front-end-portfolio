@@ -14,7 +14,6 @@ export class AboutComponent implements OnInit {
   constructor(public personService: PersonService) { }
 
   ngOnInit(): void { 
-    this.personService.getPerson().subscribe(data => {this.person = data});
+    this.personService.getPerson().subscribe(data => {this.person = data})
   }
-
 }

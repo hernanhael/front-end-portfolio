@@ -1,40 +1,24 @@
-<div class="row"> 
+<div class="row">
     <h1>Hard and Soft Skills</h1>
     <div class="col-lg-2">
-        <button type="button" routerLink="newskill" class="btn btn-dark" *ngIf="isLogged">
-            New Skill
+        <button type="button" routerLink="newskill" class="btn btn-outline-success" *ngIf="isLogged">
+            +
         </button>
     </div>
 
     <div class="text-center col-sm-4 col-md-4 col-lg-4 circle" *ngFor="let skill of skill">
-        <circle-progress
-            [percent]="(skill.percentage)"
-            [radius]="100"
-            [imageSrc]="''"
-            [title]="(skill.name)"
-            [titleColor]="'212F3C'"
-            [showImage]="true"
-            [imageHeight]="70" 
-            [imageWidth]="70" 
-            [showTitle]="true"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="600">
+        <circle-progress [percent]="(skill.percentage)" [radius]="100" [imageSrc]="''" [title]="(skill.name)"
+            [titleColor]="'red'" [showTitle]="true" [showImage]="false" [imageHeight]="70" [imageWidth]="70"
+            [showUnits]="false" [showSubtitle]="false" [outerStrokeWidth]="16" [innerStrokeWidth]="2"
+            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="600">
         </circle-progress>
         <td *ngIf="isLogged">
-            <button class="btn btn-dark" routerLink="/edithys/{{skill.id}}">
-                <i class="bi bi-pencil-fill"></i>
-            </button>
-        </td>                        
-        <td *ngIf="isLogged">
-            <button class="btn btn-danger" (click)="delete(skill.id)">
-            <i class="bi bi trash-fill"></i>Delete</button>
+            <button class="btn bi-pencil-fill" routerLink="editskill/{{skill.id}}">
+                <i class="bi bi-pencil-fill">Edit</i></button>
         </td>
-    </div>   
+        <td *ngIf="isLogged">
+            <button class="btn btn-outline-danger" (click)="delete(skill.id)">
+                <i class="bi bi trash-fill"></i>-</button>
+        </td>
+    </div>
 </div>
-    

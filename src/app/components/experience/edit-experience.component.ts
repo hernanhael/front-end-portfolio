@@ -9,7 +9,7 @@ import { ExperienceService } from 'src/app/services/experience.service';
   styleUrls: ['./edit-experience.component.css']
 })
 export class EditExperienceComponent implements OnInit {
-  jobExperience: Experience = null; 
+  experience: Experience = null; 
 
   constructor(private experienceService: ExperienceService, private activatedRouter: ActivatedRoute, private router: Router) { }
 
@@ -17,7 +17,7 @@ export class EditExperienceComponent implements OnInit {
     const id = this.activatedRouter.snapshot.params['id'];
     this.experienceService.detail(id).subscribe(
       data =>{
-        this.jobExperience = data;
+        this.experience = data;
       }, err => {
         alert("Can't modify experience");
         this.router.navigate(['']);   
@@ -27,10 +27,10 @@ export class EditExperienceComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.experienceService.update(id, this.jobExperience).subscribe(
+    this.experienceService.update(id, this.experience).subscribe(
       data => { 
         this.router.navigate(['']); 
-    }, err =>{ 
+    }, err => { 
         alert("Can't modify experience");
         this.router.navigate(['']); 
       } 

@@ -30,8 +30,8 @@ div {
     } 
 }
 
-
-#name { 
+#nombre { 
     font-weight: bold;
-    font-size: 45px;
+    font-size: 45px; 
+    text-align: left;
 }

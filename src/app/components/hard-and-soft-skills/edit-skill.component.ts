@@ -14,12 +14,12 @@ export class EditSkillComponent implements OnInit {
   constructor(private skillService: SkillService, private activatedRouter: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    const id = this.activatedRouter.snapshot.params[''];
+    const id = this.activatedRouter.snapshot.params['id'];
     this.skillService.detail(id).subscribe(
       data => { 
         this.skill = data;
       }, err => { 
-        alert("Erorr to edit");
+        alert("Can't edit");
         this.router.navigate(['']);
       }
     )
@@ -32,7 +32,7 @@ export class EditSkillComponent implements OnInit {
       data => { 
         this.router.navigate(['']);
       }, err => { 
-        alert("Error to edit");
+        alert("Can't edit");
         this.router.navigate(['']);
       }
     )

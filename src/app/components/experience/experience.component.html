@@ -1,16 +1,10 @@
 <div class="row">
   <h1>Experience</h1>
   <div class="col-lg-2">
-    <button
-      type="button"
-      calss="btn btn-dark"
-      routerLink="newexperience"
-      *ngIf="isLogged"
-    >
-      New Experience
+    <button type="button" class="btn btn-outline-success" routerLink="newexperience" *ngIf="isLogged">
+      +
     </button>
   </div>
-
   <div class="col lg 1"></div>
   <div class="col-lg-11">
     <table class="talbe">
@@ -19,16 +13,13 @@
           <td>{{ Experience.experienceName }}</td>
           <td>{{ Experience.experienceDescription }}</td>
           <td *ngIf="isLogged">
-            <button
-              class="btn btn-dark"
-              routerLink="/editexperience/{{ Experience.id }}"
-            >
-              <i class="bi bi-pencil-fill"> </i>Edit
+            <button class="btn bi-pencil-fill" routerLink="/editexperience/{{ Experience.id }}">
+              <i class="bi bi-pencil-fill">Edit</i>
             </button>
           </td>
           <td *ngIf="isLogged">
-            <button class="btn btn-danger" (click)="delete(Experience.id)">
-              <i class="bi bi trash-fill"> </i>Delete
+            <button class="btn btn-outline-danger" (click)="delete(Experience.id)">
+              <i class="bi bi trash-fill"> </i>-
             </button>
           </td>
         </tr>
